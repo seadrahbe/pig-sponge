@@ -30,7 +30,7 @@ public class Pig {
     // Implement your solution here!
     public static String pigLatin(String sentence) {
         
-        // psuedocode
+        // pseudocode
         // take in sentence, break into chars
         // if first char vowel, return
         // if multiple chars, take first, add to end
