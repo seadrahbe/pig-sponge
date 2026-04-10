@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Pig {
 
     /*
@@ -15,6 +17,7 @@ public class Pig {
     * pigLatin("y")  should return "yay"
     * pigLatin("e")   should return "e"
     */
+    
     public static void main(String[] args) {
         // Test cases
         assertEqual(1, pigLatin("something"), "omethingsay");
@@ -26,7 +29,52 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+        
+        // psuedocode
+        // take in sentence, break into chars
+        // if first char vowel, return
+        // if multiple chars, take first, add to end
+        // add ay and return
+
+        // vowel set
+        Set<Character> vowelSet = Set.of('a', 'e', 'i', 'o', 'u');
+
+        // array of words in sentence
+        String[] splitSentence = sentence.split(" ");
+
+        // iterate through each word
+        for (int i = 0; i < splitSentence.length; i++) {
+
+            // separate word from array
+            String word = splitSentence[i];
+
+            // capture first letter of word
+            Character firstLetter = word.charAt(0);
+
+            // if word isn't a vowel
+            if (!vowelSet.contains(firstLetter)) {
+
+                // if word is longer than 1 char
+                if (word.length() > 1) {
+
+                    // remove first letter
+                    word = word.substring(1);
+
+                    // add first letter to end
+                    word += firstLetter;
+
+                }
+
+                // add "ay" to end
+                word += "ay";
+
+                // put word back in array
+                splitSentence[i] = word;
+            }
+        }
+
+        // return array joined back into sentence
+        return String.join(" ", splitSentence);
     }
 
 
@@ -45,6 +93,7 @@ public class Pig {
         System.out.println("Test " + testNumber + " passed!");
         }
     }
-    }
+
+}
   
   
