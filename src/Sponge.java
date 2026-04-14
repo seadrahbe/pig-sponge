@@ -33,7 +33,45 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
+
+    // pseudocode
+    // iterate through the string
+    // keep track of where i'm at, every 2nd character turned uppercase
+
+   String[] words = sentence.split(" ");
+
+   String finalPhrase = "";
+
+   for (String word : words) {
+
+    boolean count = false;
+
+    char[] chars = word.toCharArray();
+    
+
+    for (Character ch : chars) {
+
+      if (count == false) {
+        ch = Character.toLowerCase(ch);
+      } else {
+        ch = Character.toUpperCase(ch);
+      }
+
+      finalPhrase += ch;
+
+      count = !count;
+
+    }
+
+    finalPhrase += " ";
+  }
+
+  if (finalPhrase.length() > 1) {
+    finalPhrase = finalPhrase.substring(0, finalPhrase.length() - 1);
+  }
+
+  return finalPhrase;
+
   }
 
 

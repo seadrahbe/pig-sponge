@@ -51,7 +51,7 @@ public class Pig {
             // capture first letter of word
             Character firstLetter = word.charAt(0);
 
-            // if word isn't a vowel
+            // if firstLetter isn't a vowel
             if (!vowelSet.contains(firstLetter)) {
 
                 // if word is longer than 1 char
